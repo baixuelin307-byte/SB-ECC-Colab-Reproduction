@@ -1,0 +1,39 @@
+{
+ "meta": {
+  "model_path": "/content/drive/MyDrive/SB-ECC_backup/SB-ECC/SB_ECC_Results/LDPC__Code_n_121_k_60__06_11_2026_12_08_25/best_model",
+  "num_steps": 10,
+  "solver": "euler",
+  "max_frames": 1000000000.0,
+  "min_fer": 500
+ },
+ "6": {
+  "frames": 506306560,
+  "batches": 61805,
+  "bit_err": [
+   1437311427,
+   655212352,
+   199133506,
+   30248129,
+   1480681,
+   20447,
+   5836,
+   5573,
+   5549,
+   5626
+  ],
+  "frame_err": [
+   477663577,
+   362726490,
+   159197786,
+   28610657,
+   1460839,
+   14990,
+   753,
+   569,
+   525,
+   500
+  ],
+  "done": true,
+  "seconds": 45436.269228219986
+ }
+}

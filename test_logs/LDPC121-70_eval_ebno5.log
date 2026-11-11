@@ -1,0 +1,53 @@
+Path to model/logs: SB_ECC_Results/LDPC__Code_n_121_k_70__07_11_2026_07_34_44
+Namespace(epochs=1500, resume='/content/SB-ECC/SB_ECC_Results/LDPC__Code_n_121_k_70__06_11_2026_20_49_32/best_model', eval_only=True, ebno_min=5, ebno_max=5, max_cum_count=50000000.0, start_epoch=1, workers=4, lr=0.0005, gpus='0', batch_size=128, test_batch_size=2048, seed=42, code_type='LDPC', code_k=70, code_n=121, N_dec=6, d_model=128, h=8, solver='euler', sigma_min=0.1, sigma_max=0.8, code=<__main__.Code object at 0x790ed1cfde80>, path='SB_ECC_Results/LDPC__Code_n_121_k_70__07_11_2026_07_34_44')
+Resumed model from /content/SB-ECC/SB_ECC_Results/LDPC__Code_n_121_k_70__06_11_2026_20_49_32/best_model, start_epoch=1
+start lr: 0.0005
+SB_ECC(
+  (decoder): CrossMPTEncoder(
+    (layers): ModuleList(
+      (0-5): 6 x CrossMPTEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linears): ModuleList(
+            (0-3): 4 x Linear(in_features=128, out_features=128, bias=True)
+          )
+          (dropout): Dropout(p=0, inplace=False)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=128, out_features=512, bias=True)
+          (w_2): Linear(in_features=512, out_features=128, bias=True)
+          (dropout): Dropout(p=0, inplace=False)
+        )
+        (sublayer): ModuleList(
+          (0-1): 2 x SublayerConnection(
+            (norm): LayerNorm((128,), eps=1e-05, elementwise_affine=True, bias=True)
+            (dropout): Dropout(p=0, inplace=False)
+          )
+        )
+      )
+    )
+    (norm): LayerNorm((128,), eps=1e-05, elementwise_affine=True, bias=True)
+    (norm2): LayerNorm((128,), eps=1e-05, elementwise_affine=True, bias=True)
+  )
+  (oned_final_embed): Linear(in_features=128, out_features=1, bias=True)
+  (out_fc): Linear(in_features=176, out_features=121, bias=True)
+  (time_embed_fn): Sequential(
+    (0): Linear(in_features=1, out_features=64, bias=True)
+    (1): GELU(approximate='none')
+    (2): Linear(in_features=64, out_features=128, bias=True)
+  )
+)
+# of Parameters: 1242666
+Loading Best Model
+Final Evaluation
+FER count threshold reached EbN0:5
+Test EbN0=5, BER=[3.914998184533623e-06]
+Test EbN0=5, BER_DDPM=[0.02788226979027032, 0.013775936538162573, 0.004814720442838017, 0.0009382205652962258, 7.391352241982742e-05, 5.432411399267285e-06, 3.8659796023647115e-06, 3.8212861966603304e-06, 3.847237213124651e-06, 3.914998184533623e-06]
+Test EbN0=5, -ln(BER)_DDPM=[np.float64(3.579764283553218), np.float64(4.284831938002889), np.float64(5.336077295056615), np.float64(6.971525492361076), np.float64(9.512614764072445), np.float64(12.123127434333588), np.float64(12.463295453352242), np.float64(12.474923491320327), np.float64(12.468155274248327), np.float64(12.450695692242274)]
+Test EbN0=5, FER_DDPM=[0.9673591223986245, 0.8022511527554483, 0.42564238902286533, 0.10311482965456413, 0.008287523166755984, 0.0002241662759021079, 5.41662479903537e-05, 4.710108520900321e-05, 4.4746030948553055e-05, 4.369934016613076e-05]
+#It. to zero syndrome: Mean=2.307020425796509, Std=0.9904260039329529, Min=0.0, Max=9.0
+Test FER 5: 4.37e-05
+Test BER 5: 3.91e-06
+Test -ln(BER) 5: 1.245e+01
+# of testing samples: [11464704.0]
+ Test Time 2301.7142379283905 s
+
